@@ -1,0 +1,258 @@
+.body-container {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  max-width: 800px;
+}
+
+.left-column {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.right-column {
+  flex: 1;
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--bg-surface);
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 24px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.card-header h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main, #050505);
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* About Section */
+.about-section p {
+  color: var(--text-main, #050505);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-size: 0.90rem;
+}
+
+/* Tech Stack */
+.tech-group {
+  margin-bottom: 20px;
+}
+
+.tech-group h3 {
+  font-size: 0.9rem;
+  color: var(--text-main, #050505);
+  margin-bottom: 12px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  padding: 6px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: #444;
+  font-weight: 500;
+  color: var(--text-main, #050505);
+  
+}
+
+.view-all-btn {
+  background: none;
+  border: none;
+  color: var(--text-main, #050505);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+/* Experience Timeline Container */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1.5rem; /* Dinagdagan ang gap para mas malinis */
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+/* Vertical Line */
+.timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  /* (15px width / 2) = 7.5px. Ang 7px ay saktong gitna. */
+  left: 7px; 
+  top: 24px; /* Simula sa baba ng dot */
+  bottom: 0;
+  width: 1px;
+  background: #e0e0e0;
+}
+
+/* The Dot (Circle) */
+.timeline-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  z-index: 2;
+  margin-top: 4px;
+  background: var(--card-bg, #ffffff);
+  flex-shrink: 0; 
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect kapag tinapatan ang dot OR ang mismong timeline item */
+.timeline-item:hover .timeline-dot {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+  cursor: pointer;
+}
+
+/* Active State for Current Job */
+.timeline-dot.active {
+  background: var(--text-main, #050505);
+  border-color: #1a1a1a;
+}
+
+
+
+
+/* Content Layout */
+.timeline-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.exp-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main, #050505);
+}
+
+.exp-info p {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.exp-year {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+
+.exp-info h4 {
+  font-size: 0.90rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.exp-info p {
+  font-size: 0.75rem;
+  color: var(--text-main, #050505);
+  font-weight: 500;
+}
+
+.exp-year {
+  font-size: 0.75rem;
+  color:var(--text-main, #050505);
+  border: 1px solid #eee;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+
+/* --- MOBILE SETTINGS (480px and down) --- */
+@media screen and (max-width: 480px) {
+  .body-container {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .card {
+    padding: 16px; /* Mas maliit na padding para sa mobile */
+  }
+
+  /* Ipatong ang date sa ilalim ng job info gaya ng text sa header */
+  .timeline-content {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .exp-year {
+    display: inline-block;
+    align-self: flex-start; /* Pantay sa kaliwa */
+  }
+
+  .tags {
+    flex-wrap: wrap; /* Para hindi lumampas ang tech stack */
+    gap: 6px;
+  }
+}
+
+/* --- TABLET/LARGE MOBILE (Up to 793px) --- */
+/* Dito natin gagawing column ang layout para hindi siksikan */
+@media screen and (max-width: 793px) {
+  .body-container {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .left-column, .right-column {
+    width: 100%;
+    flex: none;
+  }
+
+  .card-header h2 {
+    font-size: 1.1rem;
+  }
+}
+
+/* --- TABLET SPECIFIC (768px to 892px) --- */
+@media screen and (min-width: 768px) and (max-width: 892px) {
+  .body-container {
+    /* Optional: Kung gusto mo pa rin ng 2 columns sa tablet, 
+       pero mas maganda ang column pag maliliit na tablet */
+    flex-direction: column; 
+    max-width: 100%;
+  }
+}

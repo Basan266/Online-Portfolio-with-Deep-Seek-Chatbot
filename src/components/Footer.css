@@ -1,0 +1,174 @@
+.footer-container {
+  display: flex;
+  gap: 20px;
+  max-width: 800px;
+  margin-top: 10px;
+
+}
+
+.footer-card {
+   background-color: var(--bg-surface);
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.footer-card:hover {
+  transform: translateY(-2px);
+}
+
+.cert-section {
+  flex: 1;
+}
+
+.recommendation-section {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 0;
+  color:  var(--text-main, #050505);
+  letter-spacing: -0.5px;
+}
+
+.footer-icon {
+  color:  var(--text-main, #050505);
+}
+
+.footer-view-all {
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Certifications List */
+.cert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cert-item {
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.cert-name {
+  font-size: 0.80rem;
+  font-weight: 500;
+  color:  var(--text-main, #050505);
+}
+
+.cert-issuer {
+  font-size: 0.70rem;
+  color:  var(--text-main, #050505);
+  margin: 0;
+}
+
+/* Recommendation Style */
+.quote {
+  font-size: 0.90rem;
+  line-height: 1.5;
+  color:  var(--text-main, #050505);
+  margin: 0 0 24px 0;
+  font-weight: 400;
+}
+
+.divider {
+  height: 1px;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.author-name {
+  font-size: 1.0rem;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.author-role {
+  font-size: 0.70rem;
+  color: #666;
+  margin: 0 0 24px 0;
+}
+
+/* Pagination Dots */
+.pagination {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background-color: #1a1a1a;
+}
+
+
+
+.fade-in {
+  animation: smoothFade 1.5s ease-in-out;
+}
+
+@keyframes smoothFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+/* --- TABLET/LARGE MOBILE (Up to 793px) --- */
+@media screen and (max-width: 793px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: -10px;
+    width: 100%;
+  }
+
+  /* Optional: Itago ang specific footer buttons kung kailangan, gaya ng community btn */
+  /* .footer-btn { display: none; } */
+}
+
+/* --- TABLET SPECIFIC (768px to 892px) --- */
+@media screen and (min-width: 768px) and (max-width: 892px) {
+  .footer-container {
+    flex-direction: row; /* Pwedeng manatiling row sa tablet kung hindi siksikan */
+    justify-content: space-between;
+    
+  }
+}

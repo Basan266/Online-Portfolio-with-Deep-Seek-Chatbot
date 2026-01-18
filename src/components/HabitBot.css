@@ -1,0 +1,304 @@
+/* HabitBot.css */
+.chat-widget-wrapper {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: 'Inter', sans-serif;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 550px;
+  width: 380px;
+  border-radius: 16px;
+  background-color: var(--bg-surface);
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+/* Header */
+.chat-header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-name {
+  color: var(--text-main, #050505);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.user-status {
+  font-size: 12px;
+  color: #4caf50;
+}
+
+
+.close-btn {
+  /* Tanggalin ang default background at border */
+  background: transparent !important; 
+  border: none !important;
+  outline: none;
+  
+  /* Ayusin ang kulay at itsura */
+  color: var(--text-main, #050505);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Chat Bubbles base sa screenshot */
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--bg-surface);
+}
+
+.message-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.sender-name {
+  color: var(--text-main, #050505);
+  font-size: 13px;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.message {
+  max-width: 85%;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: var(--bg-surface);
+  color: var(--text-main, #050505);
+  border-radius: 4px 16px 16px 16px; /* Bubble style sa pic */
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: var(--bg-surface);
+  color: var(--text-main, #050505);
+  border-radius: 16px 16px 4px 16px;
+}
+
+
+/* Container para sa Avatar at Pangalan */
+.bot-profile-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+
+/* Maliit na bilog na avatar para sa chat bubbles */
+.bot-avatar-small {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #e0e0e0;
+}
+
+/* Alignment helpers */
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-end .user-message {
+  margin-right: 8px; /* Konting space sa gilid */
+}
+
+/* Para hindi dikit-dikit ang avatar sa itaas na bubble */
+.message-wrapper {
+  margin-bottom: 8px;
+}
+
+
+
+/* Input Section - base sa 2nd picture */
+.input-area {
+  padding: 15px;
+  background-color: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.input-wrapper input {
+  flex: 1;
+  background-color: var(--bg-surface);
+  border: 1px solid #e0e0e0;
+  color: var(--text-main, #050505);
+  padding: 12px 16px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.send-btn {
+  background-color: var(--bg-surface);
+  color: var(--text-main, #050505);
+  border: none;
+  border-radius: 8px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.footer-note {
+  font-size: 11px;
+  color: var(--text-main, #050505);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+
+
+.chat-trigger-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--btn-secondary-bg, #000000);
+  color: var(--btn-secondary-text, #ffffff);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+
+.chat-icon-animated {
+  display: inline-block;
+  transform-origin: bottom right; /* Mahalaga: Para sa dulo ang pivot point ng kaway */
+  animation: waveHello 2.5s ease-in-out infinite;
+}
+
+@keyframes waveHello {
+  0%, 100% {
+    transform: rotate(0deg); /* Normal position */
+  }
+  10%, 30% {
+    transform: rotate(15deg); /* Kaway pakanan */
+  }
+  20%, 40% {
+    transform: rotate(-10deg); /* Kaway papakaliwa */
+  }
+  50% {
+    transform: rotate(0deg); /* Tigil sandali bago ulit kumaway */
+  }
+}
+
+
+
+
+/* Para sa Tablets */
+@media screen and (max-width: 768px) {
+  .chat-container {
+    width: 350px;
+    height: 500px;
+  }
+  
+  .chat-trigger-btn {
+    padding: 10px 20px;
+    font-size: 15px; /* Bahagyang liit ng text */
+  }
+}
+
+/* Para sa Mobile (Phones) */
+@media screen and (max-width: 480px) {
+  /* 1. Ayusin ang Trigger Button (Chat with Robert) */
+  .chat-trigger-btn {
+    padding: 8px 16px; /* Mas maliit na padding */
+    font-size: 14px;   /* Mas maliit na font */
+    gap: 6px;          /* Mas dikit ang icon at text */
+    bottom: 15px;      /* Mas malapit sa gilid */
+    right: 15px;
+    border-radius: 30px; /* Panatilihing bilugan pero mas maliit */
+  }
+
+  /* Opsyonal: Kung gusto mo icon na lang sa sobrang liit na screen */
+  /* .chat-trigger-btn span { display: none; } */
+
+  /* 2. Full screen ang chat box pag bukas */
+  .chat-container {
+    width: 100vw !important; /* Sakop buong lapad ng viewport */
+    height: 100vh !important; /* Sakop buong taas ng viewport */
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .chat-widget-wrapper {
+    bottom: 15px;
+    right: 15px;
+    width: auto;
+  }
+}
+
+/* Para sa mga sobrang liliit na screen (below 360px) */
+@media screen and (max-width: 360px) {
+  .chat-trigger-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  .chat-trigger-btn svg {
+    width: 18px; /* Liit ng icon */
+    height: 18px;
+  }
+}

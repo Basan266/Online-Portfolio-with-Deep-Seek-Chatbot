@@ -1,0 +1,263 @@
+/* Container na nagbabalot sa lahat (Main Outer Box) */
+.footer-wrapper {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin-top: 10px;
+  max-width: 800px;
+}
+
+.custom-footer {
+    padding: 15px;
+  display: grid;
+  border-radius: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  background-color: var(--bg-surface);
+}
+
+/* Header Styles */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-main, #050505);
+}
+
+/* Social Links Box */
+.social-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding:10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+}
+
+.social-card:hover {
+
+  color: #000000;
+}
+
+.social-icon{
+  color:  var(--text-main, #050505);
+}
+
+.social-name {
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--text-main, #050505);
+}
+
+/* Speaking Section Box */
+.speaking-box {
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 15px;
+  height: 116px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+.speaking-text {
+  font-size: 0.80rem;
+  color:  var(--text-main, #050505);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.get-in-touch {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 0.7rem;
+  color:  var(--text-main, #050505);
+  cursor: pointer;
+}
+
+/* Right Side Cards */
+.contact-column {
+  padding-top: 44px; /* Pantay sa header ng Social at Speaking */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #000000;
+}
+
+.info-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 7.5px;
+  
+  transition: all 0.2s ease;
+}
+
+.info-card.clickable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.info-card.clickable:hover {
+  color: #000000;
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.info-icon{
+  color:  var(--text-main, #050505);
+}
+
+.info-label {
+  font-size: 0.60rem;
+  font-weight: 500;
+  color:  var(--text-main, #050505);
+}
+.info-value {
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-top: 3px;
+  color:  var(--text-main, #050505);
+}
+
+.arrow-icon {
+  color: #ccc;
+}
+
+.header-icon{
+  color:  var(--text-main, #050505);;
+}
+
+
+.cert-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* This pushes the arrow to the far right */
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.cert-content {
+  flex: 1; /* Takes up available space */
+}
+
+.arrow-icon {
+  margin-left: 10px;
+  transition: transform 0.2s ease;
+}
+
+/* Optional: Move the arrow slightly when hovering */
+.cert-link:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* --- FOOTER ALIGNMENT SETTINGS --- */
+
+/* --- MOBILE SETTINGS (480px and down) --- */
+@media screen and (max-width: 480px) {
+  .footer-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .custom-footer {
+    grid-template-columns: 1fr; /* Isang column lang para malapad ang cards */
+    gap: 15px;
+    padding: 10px;
+  }
+
+  /* Tanggalin ang trophy o icon sa footer kung gusto mo ring liitan/itago */
+  .custom-footer svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .section-title {
+    font-size: 1rem; /* Mas maliit na title para sa phone */
+  }
+
+  .speaking-box {
+    height: auto; /* Hayaan itong lumaki depende sa haba ng text */
+    min-height: 100px;
+  }
+
+  .contact-column {
+    padding-top: 0; /* Alisin ang padding para dikit sa itaas na card */
+    gap: 10px;
+  }
+
+}
+
+
+
+
+/* --- TABLET/LARGE MOBILE (Up to 793px) --- */
+@media screen and (max-width: 793px) {
+  .footer-wrapper {
+    max-width: 100%;
+    margin-top: 15px;
+  }
+
+  .custom-footer {
+    /* Sa tablet, pwedeng 1 column para hindi mag-overlap ang text */
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+
+  .contact-column {
+    padding-top: 0;
+  }
+
+  .section-header {
+    margin-bottom: 10px;
+  }
+}
+
+/* --- TABLET SPECIFIC (768px to 892px) --- */
+@media screen and (min-width: 768px) and (max-width: 892px) {
+  .footer-wrapper {
+    max-width: 100%;
+  }
+
+  .custom-footer {
+    /* Pwedeng 2 columns dito kung gusto mong hindi masyadong mahaba pababa */
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Itatago ang 3rd column contents o ipapatong kung 2 columns lang */
+  .contact-column {
+    grid-column: span 2; /* Papadapin ang contact info sa ilalim */
+    padding-top: 10px;
+  }
+}
