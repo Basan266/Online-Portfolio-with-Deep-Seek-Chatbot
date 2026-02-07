@@ -1,20 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { BadgeCheck, MessageSquareQuote, ChevronRight} from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { BadgeCheck, MessageSquareQuote} from 'lucide-react';
 import './footer.css';
 
 const certifications = [
-  { title: 'Network Foundations', issuer: 'Huawei', url: 'https://drive.google.com/file/d/13lMb_UBwUEFHZyJka9IDCxNP7TvQgYDY/view' },
+  { title: 'Network Foundations', issuer: 'Huawei', url: 'https://drive.google.com/file/d/1fm8JYITxLPM5M0QfnC1kBxb9FbawOioz/view' },
   { title: 'Service Operations', issuer: 'Metrobank', url: 'https://drive.google.com/file/d/1r4oALr6FRzxdsa2WmPkcGMmo-f4ptuH4/view' },
   { title: 'Logistics and Financials', issuer: 'Sap Business One', url: 'https://drive.google.com/file/d/1_rcA9SXFNA21mCnmG8ekSE01jLRtnJLW/view' },
   { title: 'Database Foundation', issuer: 'Oracle', url: 'https://drive.google.com/file/d/13lMb_UBwUEFHZyJka9IDCxNP7TvQgYDY/view' },
 ];
 
 const recommendations = [
-  {
-    quote: "Robert is an intelligent software engineer. He takes lead during software development and can handle and manage teams well.",
-    author: "Ken Gorro",
-    role: "Senior Developer at Fullscale"
-  },
+
   {
     quote: "Robert's ability to solve complex problems is impressive. He consistently delivers high-quality work and is a great asset to any team.",
     author: "Maria Santos",

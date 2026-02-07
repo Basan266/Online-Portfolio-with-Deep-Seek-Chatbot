@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './Body.css';
 import { Briefcase, Code2, User, ChevronRight } from 'lucide-react';
 
@@ -25,20 +25,25 @@ const Body = () => {
             <h2>About</h2>
           </div>
           <p>
-            I'm a full-stack software engineer specializing in developing solutions with 
-            JavaScript, Python, and PHP. I work on projects including building modern web 
-            applications, mobile apps, search engine optimization, digital marketing, and 
-            making code tutorials.
+            I'm a passionate Android Developer with 1 year of hands-on 
+            experience in mobile app development and technical support. 
+            I specialize in building responsive and user-friendly applications 
+            using Android Studio, React.js, HTML, CSS, and cloud technologies.
           </p>
           <p>
-            I've helped startups and MSMEs grow and streamline their processes through 
-            software solutions. I've also built a community of over 200,000 developers sharing 
-            knowledge and mentorship.
+            My projects include apps like <strong>JuanCast</strong>, 
+            available on the Google Play Store, and I have experience setting 
+            up Virtual Machines in VMware to support client workflows. I've also contributed 
+            to high-impact initiatives, such as encoding over 500,000 vaccination records for 
+            the Department of Health, which honed my attention to detail, time management, 
+            and ability to perform under pressure.
           </p>
           <p>
-            Lately, I've been diving deeper into the world of artificial intelligence, focusing on 
-            integrating AI tools and techniques into modern applications.
+            I enjoy collaborating with dynamic teams and am eager 
+            to apply my skills to innovative software solutions that 
+            solve real-world problems.
           </p>
+
         </section>
 
         <section className="card tech-stack-section">

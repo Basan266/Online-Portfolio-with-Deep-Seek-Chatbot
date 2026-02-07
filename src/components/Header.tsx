@@ -1,5 +1,7 @@
 import "./Header.css";
+import { useState } from "react";
 import profilePic from "../assets/profile.jpg"; 
+import HoverprofilePic from "../assets/smiling.png"
 import ThemeToggle from "../ThemeToggle";
 // Import natin ang mga icons na kahawig ng nasa images mo
 import { MapPin, BadgeCheck, Trophy, Calendar, Mail, Users, ChevronRight, ChevronDown } from "lucide-react";
@@ -17,10 +19,19 @@ const handleSendEmail = () => {
 
 
 function Header() {
+  const [isHovered, setIsHovered] = useState(false);
+
+
   return (
     <div className="header-outer-wrapper"> {/* Bagong div para sa global sizing */}
       <div className="header">
-        <img src={profilePic} alt="Profile" className="profile-pic" />
+        <img 
+          src={isHovered ? HoverprofilePic : profilePic} 
+          alt="Profile" 
+          className="profile-pic"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        />
         <div className="header-info">
           <h1 style={{ 
             display: 'flex', 
@@ -45,7 +56,7 @@ function Header() {
           <div className="mid-header"></div>
 
           <div className="header-buttons">
-            <p>Full-Stack Developer</p>
+            <p>Software Engineer</p>
             <button className="button primary">
               <div className="btn-left-content">
                 <Trophy size={14} fill="#ffffff" color="#ffffff" />
