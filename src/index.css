@@ -1,0 +1,60 @@
+:root {
+  /* Light Mode */
+  --bg-color: #ffffff;
+  --bg-surface: #ffffff;
+  --text-main: #000000;
+  --text-secondary: #4b5563;
+  --btn-tertiary-text: #050505;
+  --border-color: #e0e0e0;
+  --badge-bg: #f0f0f0;
+  
+  /* Heto yung para sa card background */
+  --card-bg: #ffffff; 
+
+  --btn-secondary-bg: #000000;
+  --btn-secondary-text: #ffffff;
+}
+
+[data-theme='dark'] {
+  /* Dark Mode */
+  --bg-color: #000000;
+  --bg-surface: #121212;
+  --text-main: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --btn-tertiary-text: #f1f5f9;
+  --border-color: #334155;
+
+  /* Heto yung requested mong black para sa card sa dark mode */
+  --card-bg: #000000; 
+
+  --btn-secondary-bg: #ffffff;
+  --btn-secondary-text: #000000;
+}
+
+/* Updated na .card class */
+.card {
+  /* Dinagdag natin ang f0f0f0 dito */
+  background: var(--card-bg, #f0f0f0);
+  background-color: var(--card-bg); 
+  
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Gamitin mo itong class para sa mga cards o containers mo */
+.surface-div {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Para mag-apply sa buong page */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
